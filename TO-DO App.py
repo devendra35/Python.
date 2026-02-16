@@ -32,3 +32,39 @@ def complete_task(tasks):
         tasks[idx]["done"] = True
         save_tasks(tasks)
         print("Task Completed!")
+        def delete_task(tasks):
+    view_tasks(tasks)
+    idx = int(input("Enter task number to delete: ")) - 1
+    if 0 <= idx < len(tasks):
+        tasks.pop(idx)
+        save_tasks(tasks)
+        print("🗑 Task deleted!")
+
+def main():
+    tasks = load_tasks()
+    while True:
+        print("\n--- TO-DO APP ---")
+        print("1. Add Task")
+        print("2. View Tasks")
+        print("3. Complete Task")
+        print("4. Delete Task")
+        print("5. Exit")
+
+        choice = input("Choose: ")
+        if choice == "1":
+            add_task(tasks)
+        elif choice == "2":
+            view_tasks(tasks)
+        elif choice == "3":
+            complete_task(tasks)
+        elif choice == "4":
+            delete_task(tasks)
+        elif choice == "5":
+            print("Bye!")
+            break
+        else:
+            print("Invalid choice!")
+
+if __name__ == "__main__":
+    main()
+
