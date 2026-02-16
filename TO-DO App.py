@@ -31,4 +31,4 @@ def complete_task(tasks):
     if 0 <= idx < len(tasks):
         tasks[idx]["done"] = True
         save_tasks(tasks)
-        prin
+        print("Task Completed!")
