@@ -35,6 +35,7 @@ CONTENT:
 st.caption("Upload text or PDF → Get clean study notes instantly")
 
 input_method = st.radio("Choose input method:", ["Paste Text", "Upload PDF"])
+content = ""
 if input_method == "Paste Text":
     content = st.text_area("Paste your content here:", height=250)
 else:
