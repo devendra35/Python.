@@ -31,5 +31,10 @@ CONTENT:
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content
+    st.title(" Smart Note Maker")
+st.caption("Upload text or PDF → Get clean study notes instantly")
+
+input_method = st.radio("Choose input method:", ["Paste Text", "Upload PDF"])
+
 
 
