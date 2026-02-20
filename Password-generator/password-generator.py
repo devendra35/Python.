@@ -25,4 +25,15 @@ class App:
     def button(self):
         password_generator = Button(self.window, text="Generate_password",  font=('Courrier', 12), bg='white', fg='black', width=25, command=self.generate_password)
         password_generator.pack()
+         def generate_password(self):
+        characters = string.ascii_letters + string.punctuation + string.digits
+        password = ""
+        for x in range(28):
+            password+=choice(characters)
+        self.password_entry.delete(0, END)
+        self.password_entry.insert(0, password)
+        
+#display
+app = App()
+app.window.mainloop()
 
